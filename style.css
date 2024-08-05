@@ -446,6 +446,23 @@ h3 {
   background: #f7c602;
 }
 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 1000px) {
+  section {
+    margin-inline: 2rem;
+    margin-block: 3rem;
+  }
+  .service {
+    flex: 1 1 calc(50% - 2rem); /* Two boxes per row, adjusted for the gap */
+    max-width: calc(50% - 2rem); /* Ensure each box takes half of the row */
+  }
+
+  .services__content .service:last-child {
+    flex: 1 1 calc(50% - 2rem); /* Same as other boxes to ensure consistent sizing */
+    max-width: calc(50% - 2rem);
+  }
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   section {
@@ -507,22 +524,5 @@ h3 {
   }
   .menu-icon {
     display: block;
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 1000px) {
-  section {
-    margin-inline: 2rem;
-    margin-block: 3rem;
-  }
-  .service {
-    flex: 1 1 calc(50% - 2rem); /* Two boxes per row, adjusted for the gap */
-    max-width: calc(50% - 2rem); /* Ensure each box takes half of the row */
-  }
-
-  .services__content .service:last-child {
-    flex: 1 1 calc(50% - 2rem); /* Same as other boxes to ensure consistent sizing */
-    max-width: calc(50% - 2rem);
   }
 }
