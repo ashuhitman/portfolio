@@ -1,0 +1,446 @@
+html {
+  font-family: system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+:root {
+  --header-bg-color: #b2bec3;
+  --bg-color: #dfe6e9;
+  --text-color: black;
+  --button-color: #ff9f1a;
+  --text-special-color: #16a085;
+  --card-color: #dfe6e9;
+  --margin-inline: 4rem;
+  --item-gap: 2rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+[data-theme="dark"] {
+  --header-bg-color: #272a30;
+  --bg-color: #2c2f35;
+  --text-special-color: #ff9f1a;
+  --text-color: white;
+  --button-color: #16a085;
+  --card-color: #2f3640;
+}
+/* entry animation */
+.hidden {
+  filter: blur(4px);
+  opacity: 0;
+  transition: all 1s;
+  transform: translateY(30%);
+}
+.show {
+  opacity: 1 !important;
+  filter: blur(0) !important;
+  transform: translateY(0%) !important;
+  transform: translateX(0%) !important;
+}
+.hiddenSlideLeft {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-50%);
+  transition: all 1s;
+}
+.hiddenSlideRight {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(50%);
+  transition: all 1s;
+}
+.hiddenFadeIn {
+  opacity: 0;
+  transition: all 1s;
+  filter: blur(5px);
+}
+.slideShow {
+  filter: blur(0);
+  opacity: 1;
+  transform: translateX(0%);
+}
+.hiddenSlide {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+/* enty animation end */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.heading {
+  text-align: center;
+}
+.heading span {
+  position: relative;
+}
+.heading span::after,
+.heading span::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  width: 4rem;
+  height: 2px;
+  background-color: var(--text-color);
+}
+
+.heading span::before {
+  left: 0;
+  transform: translateX(-100%);
+}
+.heading span::after {
+  right: 0;
+  transform: translateX(100%);
+}
+section {
+  margin-block: var(--margin-inline);
+  margin-inline: 8rem;
+}
+/* tggle theme */
+#theme-toggle {
+  z-index: 1000;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  border: none;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--button-color);
+  color: white;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+/* header */
+header {
+  background-color: var(--header-bg-color);
+  /* color: var(--text-special-color); */
+  font-size: minmax(0.8rem, 1.2rem);
+}
+nav {
+  margin-inline: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+li {
+  cursor: pointer;
+  list-style-type: none;
+  position: relative;
+}
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.link::after {
+  margin-top: 0.2rem;
+  content: "";
+  display: inline-block;
+  transition: left 0.3s ease, right 0.3s ease;
+  position: absolute;
+
+  border-bottom: 0px solid var(--text-special-color);
+  left: 50%;
+  right: 50%;
+  bottom: -3px;
+}
+.link:hover::after {
+  border-width: 2px;
+  left: 0;
+  right: 0;
+}
+a:active {
+  color: var(--text-special-color); /* Change to your desired active color */
+}
+
+/* Optional: To make the link visually change after the scroll */
+a.active {
+  color: var(--text-special-color); /* This color persists after the click */
+}
+.logo {
+  padding: 0.3rem 1.2rem;
+  color: var(--text-special-color);
+  font-weight: bold;
+  font-size: 2rem;
+  /* background-color: var(--text-special-color); */
+}
+/* about section */
+.about {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.about h1,
+h3 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+}
+h3 {
+  color: var(--text-special-color);
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+}
+.circle-1 {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+
+  position: relative;
+
+  /* background-image: url("./images/pic1.png");
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: center; */
+  overflow: hidden;
+  padding: 10px;
+  border: 4px solid var(--text-special-color);
+}
+
+.circle-1 img {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  bottom: 0;
+
+  overflow: hidden;
+  transform: scaleX(-1);
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--item-gap);
+
+  text-align: center;
+}
+.head {
+  transition-delay: 300ms;
+}
+.foot {
+  display: flex;
+  justify-content: center;
+  gap: var(--item-gap);
+  transition-delay: 500ms;
+}
+
+/* button */
+.btn {
+  cursor: pointer;
+  padding: 1rem 4rem;
+  border: 1px solid var(--text-special-color);
+  color: var(--text-color);
+  background-color: inherit;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+.btn::before {
+  content: "";
+  display: block;
+  background-color: var(--text-special-color);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateX(-100%);
+  z-index: -1;
+  transition: all 0.2s ease-in-out;
+}
+.btn:hover::before {
+  transform: translateX(0%);
+}
+.btn:nth-child(odd) {
+  background-color: var(--text-special-color);
+}
+.btn:nth-child(odd):hover {
+  background-color: var(--bg-color);
+}
+/* Projects */
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+.projects > h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.project {
+  display: flex;
+  gap: 2rem;
+}
+.project:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.project > * {
+  flex: 1;
+  padding: 1rem;
+}
+.project figure {
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+.project figure:hover {
+  transform: scale(1.1);
+}
+.project img {
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+}
+
+.project .description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.project .btns {
+  display: flex;
+  gap: 2rem;
+}
+.tool {
+  background-color: var(--button-color);
+  padding: 0.3rem 0.6rem;
+  margin-right: 0.6rem;
+  border-radius: 4px;
+}
+/* services */
+.services__content {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.service {
+  padding: 1rem 3rem;
+  flex: 1;
+  background-color: var(--card-color);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.service-image {
+  max-height: 100px;
+}
+.service:nth-child(2) {
+  transition-delay: 200ms;
+}
+/* .service:nth-child(3) {
+  transition-delay: 400ms;
+}  */
+/* contact me */
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--item-gap);
+  align-items: center;
+}
+.contact form {
+  width: 50%;
+}
+.form-group {
+  margin-block: 1.5rem;
+}
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+}
+.form-group textarea {
+  width: 100%;
+  height: 100px;
+}
+.form-group:last-child {
+}
+/* scrollbar styling */
+/* style scrollbar */
+/* width of scrollbar */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+/* scrolling background color */
+::-webkit-scrollbar-track {
+}
+/* scrollbar color */
+::-webkit-scrollbar-thumb {
+  background: var(--button-color);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f7c602;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  section {
+    margin-inline: 0.6rem;
+    margin-block: 2rem;
+  }
+  nav {
+    margin-inline: 0px;
+  }
+  .about h1,
+  .about h3 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+  .circle-1 {
+    height: 150px;
+    width: 150px;
+  }
+  .circle-1 img {
+    top: -40px;
+  }
+  .right-nav {
+    display: none;
+  }
+  .projects {
+    gap: 2rem;
+  }
+  .project {
+    flex-direction: column-reverse !important;
+    gap: 0.5rem;
+  }
+  .project .description {
+    gap: 0.96rem;
+  }
+  .services__content {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .contact form {
+    width: 100%;
+  }
+  .btn {
+    padding: 0.4rem 1rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}

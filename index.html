@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashutosh Singh | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <button id="theme-toggle">
+      <i id="theme-icon" class="fas fa-sun"></i>
+      <!-- Default icon -->
+    </button>
+    <div class="container">
+      <!-- header section -->
+      <header class="nav">
+        <nav>
+          <ul>
+            <li class="logo">𝒜𝓈𝒽𝓊𝓉𝑜𝓈𝒽</li>
+          </ul>
+          <ul class="right-nav">
+            <li><a href="#" class="link">Home</a></li>
+            <li><a href="#projects" class="link">Projects</a></li>
+            <li><a href="#services" class="link">Services</a></li>
+            <li><a href="#contact" class="link">Contact Me</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- about section -->
+      <section class="about" id="">
+        <div class="left">
+          <div class="head hidden">
+            <h1>Hello, I'm Ashutosh Singh</h1>
+            <h3 class="sub-heading"><span><</span>Full Stack Developer /></h3>
+          </div>
+
+          <div class="foot hidden">
+            <button class="btn">Resume</button>
+            <button class="btn">Contact Me</button>
+          </div>
+        </div>
+        <div class="right hidden">
+          <div class="circle-1">
+            <img src="/images/pic4.jpeg" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- projects section -->
+      <section id="projects" class="projects">
+        <h2 class="heading"><span>Projects</span></h2>
+        <div class="project hidden">
+          <figure class="image">
+            <img src="/images/quizkosh.png" />
+          </figure>
+          <div class="description">
+            <h2>Quizkosh Web App</h2>
+            <p>
+              Full Stack Web App to create your own test and also attempt
+              available test
+            </p>
+            <p>
+              <span class="tool">React</span><span class="tool">Nodejs</span
+              ><span class="tool">Mongodb</span>
+            </p>
+
+            <div class="btns">
+              <a
+                href="https://keen-lokum-279032.netlify.app/"
+                class="btn"
+                target="_blank"
+                >Live</a
+              >
+              <a
+                href="https://github.com/ashuhitman/quizkosh"
+                class="btn"
+                target="_blank"
+                >Code <i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="project hidden">
+          <figure class="image">
+            <img src="/images/shoprecorder.png" />
+          </figure>
+          <div class="description">
+            <h2>ShopRecorder Mobile App</h2>
+            <p>
+              Developed an android app using flutter framework to keep record of
+              time and prices for the mobile whole sale shop
+            </p>
+            <p>
+              <span class="tool">Flutter</span> <span class="tool">SQLite</span>
+            </p>
+            <div class="btns">
+              <a
+                href="https://www.youtube.com/watch?v=9h9h6r_Ozak"
+                class="btn"
+                target="_blank"
+                >Live</a
+              >
+              <a
+                href="https://github.com/ashuhitman/ShopRecorder"
+                class="btn"
+                target="_blank"
+                >Code <i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="project hidden">
+          <figure class="image">
+            <img src="/images/library.png" />
+          </figure>
+          <div class="description">
+            <h2>Libray User Tracker</h2>
+            <p>Tracks no of users check in and checked-out in library</p>
+            <p>
+              <span class="tool">React</span><span class="tool">Nodejs</span
+              ><span class="tool">MySQL</span>
+            </p>
+            <div class="btns">
+              <a
+                href="https://libraryusertracker.netlify.app/"
+                class="btn"
+                target="_blank"
+                >Live</a
+              >
+              <a
+                href="https://github.com/ashuhitman/LibraryUserTrackerUI"
+                class="btn"
+                target="_blank"
+                >Code <i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- services section -->
+      <section id="services">
+        <h2 class="heading"><span>Services</span></h2>
+        <div class="services__content">
+          <div class="service hiddenSlideLeft">
+            <!-- <img
+              src="frontend-development.jpg"
+              alt="Frontend Development"
+              class="service-image"
+            /> -->
+            <h2 class="service-title">Frontend Development</h2>
+            <p class="service-description">
+              Building responsive and user-friendly web interfaces using React,
+              HTML, and CSS.
+            </p>
+          </div>
+          <div class="service hiddenFadeIn">
+            <!-- <img
+              src="backend-development.jpg"
+              alt="Backend Development"
+              class="service-image"
+            /> -->
+            <h2 class="service-title">Backend Development</h2>
+            <p class="service-description">
+              Creating and maintaining robust server-side applications using
+              Node.js and Express.
+            </p>
+          </div>
+          <div class="service hiddenSlideRight">
+            <!-- <img
+              src="database-management.jpg"
+              alt="Database Management"
+              class="service-image"
+            /> -->
+            <h2 class="service-title">Database Management</h2>
+            <p class="service-description">
+              Designing and managing databases with MySQL or other database
+              systems for efficient data storage.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- contact me section -->
+      <section id="contact" class="contact">
+        <h2 class="heading hiddenFadeIn"><span>Contact Me</span></h2>
+        <p class="hiddenFadeIn">
+          Get in touch or shoot me an email directly on
+          <b>ashu8306@gmail.com</b>
+        </p>
+        <form class="hidden">
+          <div class="form-group">
+            <input type="text" placeholder="Enter Your Name" />
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Enter Your Email" />
+          </div>
+          <div class="form-group">
+            <textarea type="text" placeholder="Your Message"></textarea>
+          </div>
+          <div class="form-group">
+            <button class="btn">Send Message</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
