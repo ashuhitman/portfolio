@@ -501,6 +501,10 @@ h3 {
     flex-direction: column;
     gap: 0.8rem;
   }
+  .service {
+    flex: 1;
+    min-width: 100%;
+  }
   .contact form {
     width: 100%;
   }
