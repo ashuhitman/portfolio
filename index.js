@@ -84,15 +84,19 @@ document.querySelectorAll(".nav-link").forEach((link) => {
   });
 });
 // Menu icon
-document.querySelector(".menu-icon").addEventListener("click", () => {
-  const menuIcon = document.querySelector(".nav-list");
-  if (menuIcon.style.display === "none" || menuIcon.style.display === "") {
-    document.body.style.overflow = "hidden";
-    menuIcon.style.display = "block";
-  } else {
-    document.body.style.overflow = ""; // Reset to default
-    menuIcon.style.display = "none";
-  }
+document.querySelectorAll(".menu-icon").forEach((el) => {
+  el.addEventListener("click", () => {
+    console.log("menu icon clicked");
+
+    const menuIcon = document.querySelector(".nav-list");
+    if (menuIcon.style.display === "none" || menuIcon.style.display === "") {
+      document.body.style.overflow = "hidden";
+      menuIcon.style.display = "block";
+    } else {
+      document.body.style.overflow = ""; // Reset to default
+      menuIcon.style.display = "none";
+    }
+  });
 });
 
 // Cancel menu list

@@ -245,13 +245,7 @@ h3 {
   height: 180px;
   width: 180px;
   border-radius: 50%;
-
   position: relative;
-
-  /* background-image: url("./images/pic1.png");
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  background-position: center; */
   overflow: hidden;
   padding: 10px;
   border: 4px solid var(--text-special-color);
