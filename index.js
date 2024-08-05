@@ -1,3 +1,10 @@
+// change theme
+const init = () => {
+  const theme = localStorage.getItem("theme") || "";
+  document.documentElement.setAttribute("data-theme", theme);
+};
+
+init();
 // Select all <a> elements with class .link
 const links = document.querySelectorAll("a.link");
 
@@ -46,9 +53,17 @@ const hiddenSlideRightElm = document.querySelectorAll(".hiddenSlideRight");
 
 // toggle theme
 document.getElementById("theme-toggle").addEventListener("click", function () {
-  const currentTheme = document.documentElement.getAttribute("data-theme");
-  const newTheme = currentTheme === "dark" ? "" : "dark";
+  changeTheme();
+});
+
+function changeTheme() {
+  const theme = localStorage.getItem("theme") || "";
+
+  // const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = theme === "dark" ? "" : "dark";
+  console.log(theme, newTheme);
   document.documentElement.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
 
   // Update icon based on theme
   const themeIcon = document.getElementById("theme-icon");
@@ -59,7 +74,7 @@ document.getElementById("theme-toggle").addEventListener("click", function () {
     themeIcon.classList.remove("fa-sun");
     themeIcon.classList.add("fa-moon");
   }
-});
+}
 
 // nav links
 document.querySelectorAll(".nav-link").forEach((link) => {
@@ -85,4 +100,22 @@ document.querySelector(".cancel").addEventListener("click", () => {
   const menuIcon = document.querySelector(".nav-list");
   document.body.style.overflow = ""; // Reset to default
   menuIcon.style.display = "none";
+});
+
+// fixed navbar
+window.addEventListener("scroll", (e) => {
+  // Get the current scroll position
+  const scrollTop =
+    document.documentElement.scrollTop || document.body.scrollTop;
+  // hide and show fixed nav
+
+  const fixedNav = document.querySelector(".fixed-nav");
+  const Nav = document.querySelector(".nav");
+  if (scrollTop > 200) {
+    fixedNav.style.transform = "translateY(0%)";
+    // Nav.style.display = "none";
+  } else {
+    fixedNav.style.transform = "translateY(-100%)";
+    // Nav.style.display = "block";
+  }
 });
