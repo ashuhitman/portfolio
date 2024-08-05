@@ -11,9 +11,18 @@
     />
   </head>
   <body>
-    <!-- <button id="theme-toggle">
+    <button id="theme-toggle">
       <i id="theme-icon" class="fas fa-sun"></i>
-    </button> -->
+    </button>
+    <div class="nav-list">
+      <span class="cancel"><i class="fa-sharp fa-solid fa-xmark"></i></span>
+      <ul>
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact" class="nav-link">Contact Me</a></li>
+      </ul>
+    </div>
     <div class="container">
       <!-- header section -->
       <header class="nav">
@@ -21,6 +30,10 @@
           <ul>
             <li class="logo">𝒜𝓈𝒽𝓊𝓉𝑜𝓈𝒽</li>
           </ul>
+          <ul>
+            <li class="menu-icon"><i class="fa-solid fa-bars"></i></li>
+          </ul>
+
           <ul class="right-nav">
             <li><a href="#" class="link">Home</a></li>
             <li><a href="#projects" class="link">Projects</a></li>
@@ -29,6 +42,8 @@
           </ul>
         </nav>
       </header>
+      <!-- nav list -->
+
       <!-- about section -->
       <section class="about" id="">
         <div class="left">
@@ -39,7 +54,7 @@
 
           <div class="foot hidden">
             <button class="btn">Resume</button>
-            <button class="btn">Contact Me</button>
+            <a class="btn" href="#contact">Contact Me</a>
           </div>
         </div>
         <div class="right hidden">
@@ -173,22 +188,23 @@
           Get in touch or shoot me an email directly on
           <b>ashu8306@gmail.com</b>
         </p>
-        <form class="hidden">
+        <form class="hidden" onsubmit="sendEmail(event)">
           <div class="form-group">
-            <input type="text" placeholder="Enter Your Name" />
+            <input id="name" type="text" placeholder="Enter Your Name" />
           </div>
           <div class="form-group">
-            <input type="text" placeholder="Enter Your Email" />
+            <input id="" type="text" placeholder="Enter Your Email" />
           </div>
           <div class="form-group">
             <textarea type="text" placeholder="Your Message"></textarea>
           </div>
           <div class="form-group">
-            <button class="btn">Send Message</button>
+            <button type="submit" class="btn">Send Message</button>
           </div>
         </form>
       </section>
     </div>
     <script src="index.js"></script>
+    <script src="email.js"></script>
   </body>
 </html>

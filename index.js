@@ -22,7 +22,6 @@ links.forEach((link) => {
 // element entry animation
 const obaserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry);
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     }
@@ -60,4 +59,30 @@ document.getElementById("theme-toggle").addEventListener("click", function () {
     themeIcon.classList.remove("fa-sun");
     themeIcon.classList.add("fa-moon");
   }
+});
+
+// nav links
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.body.style.overflow = "";
+    document.querySelector(".nav-list").style.display = "none";
+  });
+});
+// Menu icon
+document.querySelector(".menu-icon").addEventListener("click", () => {
+  const menuIcon = document.querySelector(".nav-list");
+  if (menuIcon.style.display === "none" || menuIcon.style.display === "") {
+    document.body.style.overflow = "hidden";
+    menuIcon.style.display = "block";
+  } else {
+    document.body.style.overflow = ""; // Reset to default
+    menuIcon.style.display = "none";
+  }
+});
+
+// Cancel menu list
+document.querySelector(".cancel").addEventListener("click", () => {
+  const menuIcon = document.querySelector(".nav-list");
+  document.body.style.overflow = ""; // Reset to default
+  menuIcon.style.display = "none";
 });
