@@ -7,8 +7,15 @@ const init = () => {
 init();
 // Select all <a> elements with class .link
 const links = document.querySelectorAll("a.link");
+const navLinks = document.querySelectorAll("a.nav-link");
 
 links.forEach((link) => {
+  scrollToView(link, links);
+});
+navLinks.forEach((link) => {
+  scrollToView(link, navLinks);
+});
+function scrollToView(link, links) {
   link.addEventListener("click", function (event) {
     // Prevent default anchor click behavior
     event.preventDefault();
@@ -22,9 +29,20 @@ links.forEach((link) => {
     // Scroll to the target section
     const targetId = this.getAttribute("href").substring(1);
     const targetElement = document.getElementById(targetId);
-    targetElement.scrollIntoView({ behavior: "smooth" });
+    if (targetId === "home") {
+      // Scroll to the top of the viewport if target ID is 'home'
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start", // Ensures the target element is aligned to the top of the viewport
+      });
+    }
   });
-});
+}
 
 // element entry animation
 const obaserver = new IntersectionObserver((entries) => {

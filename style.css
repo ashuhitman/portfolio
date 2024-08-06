@@ -180,8 +180,8 @@ nav li {
 .nav-list li {
   margin: 2rem;
 }
-.nav-list .nav-link {
-  color: var(--menu-color) !important;
+.nav-list a {
+  color: var(--menu-color);
   font-size: 1.4rem;
   font-weight: bold;
 }
